@@ -1,0 +1,52 @@
+<head>
+  <title>Leaderboard</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="logo"></div>
+    <h1 class="title">Sri's Game</h1>
+    <div class="subtitle">You have 10 points to distribute to each of the following</div>
+    {{> game}}
+  </div>
+</body>
+
+<template name="game">
+  {{#with cards}}
+  {{> card}}
+  {{/with}}
+  {{#if haveCards }}
+  <button class="nextcard">Click to see the next card</button>
+  {{else}}
+  <button class="done"> DONE </button>
+  {{/if}}
+  {{#if done}}
+  <div class="details">
+    Woo hoo! Want to go back and see how you compare to others?
+  </div>
+  {{/if}}
+</template>
+
+<template name="card">
+  {{#with card}}
+  <div class="details">
+    <div class="name">{{option1}}
+      <br/><button class="inc" id="1"> + {{points1}}</button>
+    </div>
+  <hr/>
+    <div class="name">{{option2}}
+      <br/><button class="inc" id="2"> + {{points2}}</button>
+    </div>
+  </div>
+  {{/with}}
+</template>
+
+<template name="player">
+  <li class="player {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="score">{{score}}</span>
+  </li>
+</template>
+
