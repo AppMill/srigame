@@ -1,0 +1,5 @@
+// improve this app so that:
+// - instead of just 2 options, there can be as many options as defined for each card as saved in the database. 
+// Find out how many options, show UI for each option
+
+// see github/appmill/srigame  issues tracker
